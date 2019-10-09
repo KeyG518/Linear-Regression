@@ -154,19 +154,22 @@ def linear_regression(x, t, basis, reg_lambda=0, degree=0, mu=0, s=1):
     # Learning Coefficients
     if reg_lambda > 0:
         # regularized regression
-        w = np.linalg.inv(reg_lambda*phi_i + phi.T.dot(phi)).dot(phi.T).dot(t)
+        sudoi = reg_lambda*phi_i + phi.T.dot(phi)
+        w = np.linalg.inv(sudoi).dot(phi.T).dot(t)
     else:
         # no regularization
         w = phi_sudoinv.dot(t)
 
     # Measure root mean squared error on training data.
     N = t.shape[0]
-    train_err = math.sqrt(np.sum(np.square(t - phi.dot(w))) / N)
+    square_err = np.square(t - phi.dot(w))
+    sum_err = np.sum(square_err) / N
+    train_err = math.sqrt(sum_err)
 
     return (w, train_err)
 
 
-def evaluate_regression(w, x_test, t_test, basis=None, degree = None):
+def evaluate_regression(w, x_test, t_test, basis=None, degree = None, mu=0, s=1):
     """Evaluate linear regression on a dataset.
 
     Args:
@@ -178,12 +181,13 @@ def evaluate_regression(w, x_test, t_test, basis=None, degree = None):
       t_est values of regression on inputs
       err RMS error on training set if t is not None
       """
-    phi_test = design_matrix(x_test, degree, basis)
+    phi_test = design_matrix(x_test, degree, basis, mu, s)
 
     t_est = phi_test.dot(w)
     N = t_est.shape[0]
-
-    err = math.sqrt(np.sum(np.square(t_est - t_test)) / N)
+    square_err = np.square(t_est - t_test)
+    sum_err = np.sum(square_err) / N
+    err = math.sqrt(sum_err)
 
     return (t_est, err)
 
@@ -214,14 +218,17 @@ def linear_regression_WithoutBias(x, t, basis, reg_lambda=0, degree=0, mu=0, s=1
     # Learning Coefficients
     if reg_lambda > 0:
         # regularized regression
-        w = np.linalg.inv(reg_lambda*phi_i + phi.T.dot(phi)).dot(phi.T).dot(t)
+        sudoi = reg_lambda*phi_i + phi.T.dot(phi)
+        w = np.linalg.inv(sudoi).dot(phi.T).dot(t)
     else:
         # no regularization
         w = phi_sudoinv.dot(t)
 
     # Measure root mean squared error on training data.
     N = t.shape[0]
-    train_err = math.sqrt(np.sum(np.square(t - phi.dot(w))) / N)
+    square_err = np.square(t - phi.dot(w))
+    sum_err = np.sum(square_err) / N
+    train_err = math.sqrt(sum_err)
 
     return (w, train_err)
 
@@ -241,7 +248,9 @@ def evaluate_regression_WithoutBias(w, x_test, t_test, basis=None, degree = None
 
     t_est = phi_test.dot(w)
     N = t_est.shape[0]
+    square_err = np.square(t_est - t_test)
+    sum_err = np.sum(square_err) / N
+    err = math.sqrt(sum_err)
 
-    err = math.sqrt(np.sum(np.square(t_est - t_test)) / N)
 
     return (t_est, err)

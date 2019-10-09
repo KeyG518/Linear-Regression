@@ -23,6 +23,9 @@ t_train = targets[0:N_TRAIN]
 t_test = targets[N_TRAIN:]
 
 (w, tr_err) = a1.linear_regression(x_train, t_train, 'sigmoid', mu = 10000, s = 2000)
+print(w)
+(t_est, te_err) = a1.evaluate_regression(w, x_test, t_test,  "sigmoid",mu = 10000, s = 2000)
+
 # Plot a curve showing learned function.
 # Use linspace to get a set of samples on which to evaluate
 x_ev = np.linspace(np.asscalar(min(x_train)), np.asscalar(max(x_train)), num=500).reshape(500, 1)
@@ -35,7 +38,7 @@ x_ev = np.linspace(np.asscalar(min(x_train)), np.asscalar(max(x_train)), num=500
 
 x_designM = a1.design_matrix(x_ev, 3, 'sigmoid', mu = 100, s =2000)
 y_ev = x_designM * w
-
+print(tr_err, te_err)
 
 
 plt.plot(x_ev, y_ev,'r,-')
