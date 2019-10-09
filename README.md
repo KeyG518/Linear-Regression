@@ -15,7 +15,7 @@ Child mortality rates (number of children who die before age 5, per 1000 live bi
 ***Polynomial basis function regression*** 
 
 
-unregularized for degree 1 to degree 6 polynomials. Include bias term.
+unregularized for degree 1 to degree 6 polynomials. Include bias term.<br />  
 Error function: ![](https://latex.codecogs.com/gif.latex?E%28w%29%20%3D%5Cfrac%7B1%7D%7B2%7D%5Cleft%28%20%5Csum_%7Bk%3D1%7D%5En%20t_n%20-%20w%5ETx_n%20%5Cright%29%5E2)<br />  
 
 ![alternativetext](Graph/5.2.1_BeforeNormalize.png)
