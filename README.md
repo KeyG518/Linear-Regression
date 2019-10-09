@@ -8,7 +8,7 @@ Child mortality rates (number of children who die before age 5, per 1000 live bi
 • Input features: Major factors in these areas (eg: Annual no. of under-5 deaths (thousands) 2011).<br />  
 • Training data: 100 countries(Afghanistan to Luxembourg).<br />  
 • Testing data: 95 countries(Madagascar to Zimbabwe).<br />  
-• Cross-validation: 10 folds Cross-validation.
+• Cross-validation: 10 folds Cross-validation.<br />  <br />  <br />  
 
 
 
