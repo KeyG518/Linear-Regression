@@ -10,12 +10,13 @@ Child mortality rates (number of children who die before age 5, per 1000 live bi
 • Testing data: 95 countries(Madagascar to Zimbabwe).
 • Cross-validation: 10 folds Cross-validation.
 
-Error function: $E(w) =\frac{1}{2}\left( \sum_{k=1}^n t_n - w^Tx_n \right)^2$
+
 
 ***Polynomial basis function regression*** 
 
 
 unregularized for degree 1 to degree 6 polynomials. Include bias term.
+Error function: ![](https://latex.codecogs.com/gif.latex?E%28w%29%20%3D%5Cfrac%7B1%7D%7B2%7D%5Cleft%28%20%5Csum_%7Bk%3D1%7D%5En%20t_n%20-%20w%5ETx_n%20%5Cright%29%5E2)<br />  
 
 ![alternativetext](Graph/5.2.1_BeforeNormalize.png)
 
@@ -29,8 +30,9 @@ a single input feature(GNI per capita (US$) 2011', 'Life expectancy at birth (ye
 
 ***L2-regularized regression***
 
- Fit a degree 2 polynomial using λ = {0, .01, .1, 1, 10, $10^2$ , $10^3$, $10^4$}. Use normalized features as input. Include a bias term. Use 10-fold cross-validation to decide on the best value for λ.
+ Fit a degree 2 polynomial using λ = {0, .01, .1, 1, 10, 10^2 , 10^3, 10^4}. Use normalized features as input. Include a bias term. Use 10-fold cross-validation to decide on the best value for λ. <br />  
+ Error function: ![](https://latex.codecogs.com/gif.latex?E%28w%29%20%3D%5Cfrac%7B1%7D%7B2%7D%5Cleft%28%20%5Csum_%7Bk%3D1%7D%5En%20t_n%20-%20w%5ETx_n%20%5Cright%29%5E2-%28%5Clambda%5Csum_%7Bk%3D1%7D%5En%20w_k%29)
 
  ![alternativetext](Graph/5.4.png)
 
- the best $\lambda $ should aound $10^2$ to $10^3$.
+ the best $\lambda $ should aound 10^2 to 10^3.
