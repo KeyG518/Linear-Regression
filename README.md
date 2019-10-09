@@ -4,10 +4,10 @@ The dataset for this machine learning project is created from data provided by U
 http://www.unicef.org/sowc2013/statistics.html <br />  
 Child mortality rates (number of children who die before age 5, per 1000 live births) for 195 countries, and a set of other indicators are included.
 
-• Target value: (Under-5 mortality rate (U5MR) 2011)
-• Input features: Major factors in these areas (eg: Annual no. of under-5 deaths (thousands) 2011).
-• Training data: 100 countries(Afghanistan to Luxembourg).
-• Testing data: 95 countries(Madagascar to Zimbabwe).
+• Target value: (Under-5 mortality rate (U5MR) 2011)<br />  
+• Input features: Major factors in these areas (eg: Annual no. of under-5 deaths (thousands) 2011).<br />  
+• Training data: 100 countries(Afghanistan to Luxembourg).<br />  
+• Testing data: 95 countries(Madagascar to Zimbabwe).<br />  
 • Cross-validation: 10 folds Cross-validation.
 
 
