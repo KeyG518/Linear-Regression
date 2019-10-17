@@ -35,4 +35,4 @@ a single input feature(GNI per capita (US$) 2011', 'Life expectancy at birth (ye
 
  ![alternativetext](Graph/5.4.png)
 
- the best $\lambda $ should aound 10^2 to 10^3.
+ the best lambda should aound 10^2 to 10^3.
